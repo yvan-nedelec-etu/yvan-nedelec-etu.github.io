@@ -1,0 +1,112 @@
+/* Global Styles */
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  color: #ff6347;
+  text-align: center;
+}
+
+header {
+  background-color: #ffeb3b;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+section {
+  padding: 40px 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 2em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #ff6347;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sections Spécifiques */
+.intro {
+  background-color: #e3f2fd;
+}
+
+.skills {
+  background-color: #ffe0b2;
+}
+
+.projects {
+  background-color: #c8e6c9;
+}
+
+.contact {
+  background-color: #f8bbd0;
+}
+
+footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Styles Drôles et Uniques */
+.project {
+  background-color: #ffb74d;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.project h3 {
+  font-size: 1.8em;
+}
+
+.project p {
+  font-style: italic;
+  color: #444;
+}
+
+footer p {
+  font-size: 0.8em;
+}
