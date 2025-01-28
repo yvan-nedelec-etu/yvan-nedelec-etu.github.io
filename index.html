@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <title>Météo Dynamique via Geocoding (OpenWeatherMap)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0; 
+      padding: 0;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+    main {
+      max-width: 600px;
+      margin: 2em auto;
+      background: #fff;
+      padding: 1.5em;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    select, input {
+      display: block;
+      margin: 1em auto;
+      padding: 0.5em;
+      font-size: 1rem;
+    }
+    #result {
+      text-align: center;
+      margin-top: 2em;
+    }
+    #icone {
+      display: block;
+      margin: 0.5em auto;
+      width: 100px;
+    }
+    footer {
+      background: #ddd;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+  </style>
+
+  <script src="meteo.js" defer></script>
 </head>
 <body>
- <h2>Niort</h2>
- <p>12°, pluvieux</p>
- <img src="pluvieux.png" width="5%"/>
+  <header>
+    <h1>Météo avec Géocodage Automatique</h1>
+  </header>
+
+  <main>
+    <h2>Choisissez une ville</h2>
+
+    <select id="select-ville">
+      <option value="Niort" selected>Niort</option>
+      <option value="Paris">Paris</option>
+      <option value="Marseille">Marseille</option>
+    </select>
+
+    <input type="text" id="input-ville" placeholder="Taper une autre ville (ex: 'London')" />
+
+    <button id="btn-search">Rechercher</button>
+
+    <div id="result">
+      <h3 id="ville-choisie">--</h3>
+      <p id="meteo">Température : -- °C</p>
+      <img id="icone" src="" alt="Icône météo"/>
+    </div>
+  </main>
+
+  <footer>
+    <p>Nom/Prénom - Clé API OpenWeatherMap</p>
+  </footer>
 </body>
 </html>
+
