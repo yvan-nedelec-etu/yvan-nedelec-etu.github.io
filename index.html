@@ -2,83 +2,69 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Météo Yvan NEDELEC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0; 
-      padding: 0;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1em;
-      text-align: center;
-    }
-    main {
-      max-width: 600px;
-      margin: 2em auto;
-      background: #fff;
-      padding: 1.5em;
-      border-radius: 8px;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    select, input {
-      display: block;
-      margin: 1em auto;
-      padding: 0.5em;
-      font-size: 1rem;
-    }
-    #result {
-      text-align: center;
-      margin-top: 2em;
-    }
-    #icone {
-      display: block;
-      margin: 0.5em auto;
-      width: 100px;
-    }
-    footer {
-      background: #ddd;
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
-    }
-  </style>
-
-  <script src="meteo.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Météo Yvan JS</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#projets">Mes projets</a></li>
+        <li><a href="#bilans">Mes bilans</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <h2>Choisissez une ville</h2>
+    <section id="accueil" class="section">
+      <h1>Bienvenue sur mon Portfolio</h1>
+      <p>Découvrez mes projets et mon parcours.</p>
+    </section>
 
-    <select id="select-ville">
-      <option value="Niort" selected>Niort</option>
-      <option value="Paris">Paris</option>
-      <option value="Marseille">Marseille</option>
-    </select>
+    <section id="a-propos" class="section">
+      <h2>À propos de moi</h2>
+      <p>Je suis un développeur passionné par la création de solutions innovantes.</p>
+      <div class="logos">
+        <img src="path/to/html-logo.png" alt="HTML" class="logo">
+        <img src="path/to/css-logo.png" alt="CSS" class="logo">
+        <img src="path/to/js-logo.png" alt="JavaScript" class="logo">
+        <img src="photos/python.png" alt="Python" class="logo">
+        <img src="path/to/java-logo.png" alt="Java" class="logo">
+      </div>
+    </section>
 
-    <input type="text" id="input-ville" placeholder="Taper une autre ville (ex: 'London')" />
+    <section id="projets" class="section">
+      <h2>Mes projets</h2>
+      <div class="project">
+        <h3>Projet 1</h3>
+        <p>Description du projet 1.</p>
+      </div>
+      <div class="project">
+        <h3>Projet 2</h3>
+        <p>Description du projet 2.</p>
+      </div>
+    </section>
 
-    <button id="btn-search">Rechercher</button>
+    <section id="bilans" class="section">
+      <h2>Mes bilans</h2>
+      <p>Voici un aperçu de mes réussites et apprentissages.</p>
+    </section>
 
-    <div id="result">
-      <h3 id="ville-choisie">--</h3>
-      <p id="meteo">Température : -- °C</p>
-      <img id="icone" src="" alt="Icône météo"/>
-    </div>
+    <section id="contact" class="section">
+      <h2>Contactez-moi</h2>
+      <form>
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
   </main>
 
-  <footer>
-    <p>Yvan NEDELEC</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
-
