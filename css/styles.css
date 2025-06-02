@@ -1,112 +1,134 @@
-/* reset & font */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body, html { height: 100%; }
+/* ---------------- Reset & Font ---------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
 body {
   font-family: 'Poppins', sans-serif;
   color: #fff;
   overflow-x: hidden;
 }
 
-/* background blur */
+/* -------------- Background Blur ------------- */
 body::before {
   content: "";
-  position: fixed; top: 0; left: 0;
+  position: fixed;
+  top: 0; left: 0;
   width: 100%; height: 100%;
   background: url('../assets/background.jpg') no-repeat center/cover;
   filter: blur(8px);
   z-index: -1;
 }
 
-/* header & burger */
+/* --------------- Navbar (Header) ------------- */
 header {
-  position: fixed; top: 0; right: 0;
-  width: 100%; height: 60px;
-  display: flex; justify-content: flex-end; align-items: center;
-  background: rgba(30,30,60,0.6);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background: rgba(20, 20, 40, 0.8);
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
-.burger-menu {
-  width: 30px; height: 24px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  margin: 0 20px; cursor: pointer;
+.navbar .nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
 }
-.burger-menu span {
-  display: block; height: 3px; background: #fff; border-radius: 2px;
-  transition: transform 0.3s, opacity 0.3s;
+.navbar .nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
-.burger-menu.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
-.burger-menu.active span:nth-child(2) { opacity: 0; }
-.burger-menu.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
-
-/* nav-menu */
-.nav-menu {
-  position: fixed; top: 60px; right: 0;
-  background: rgba(20,20,40,0.9); backdrop-filter: blur(6px);
-  width: 200px; transform: translateX(100%);
-  transition: transform 0.4s ease-in-out;
-}
-.nav-menu.open { transform: translateX(0); }
-.nav-menu ul {
-  list-style: none; padding: 20px;
-}
-.nav-menu li {
-  opacity: 0; margin: 15px 0;
-  transform: translateX(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transition-delay: var(--delay);
-}
-.nav-menu.open li {
-  opacity: 1; transform: translateX(0);
-}
-.nav-menu a {
-  color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem;
+.navbar .nav-item a:hover {
+  color: #a7bfff;
 }
 
-/* welcome section */
+/* push content below header */
+main {
+  padding-top: 80px;
+}
+
+/* ------------- Welcome Section -------------- */
 .welcome-section {
-  height: 100vh; display: flex;
-  flex-direction: column; justify-content: center; align-items: center;
-  text-align: center; padding: 0 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
 }
 .welcome-section h1 {
-  font-size: 3rem; animation: fadeIn 1.5s ease-in-out;
+  font-size: 3rem;
+  animation: fadeIn 1.5s ease-in-out;
 }
 .profile-photo {
-  width: 150px; height: 150px; border-radius: 50%;
-  margin-top: 20px; opacity: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 1rem;
+  opacity: 0;
   animation: fadeIn 1.5s ease-in-out 0.5s forwards;
 }
 
-/* skills section */
+/* ------------- Skills Section -------------- */
 .skills-section {
-  min-height: 100vh; display: flex; justify-content: center;
-  align-items: flex-start; padding-top: 120px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
 }
-.skills-container { position: relative; width: 350px; }
+.skills-container {
+  position: relative;
+  width: 350px;
+  margin: 0 20px;
+}
 .skills-text {
-  background: rgba(30,30,60,0.7); border-radius: 20px;
-  padding: 30px; text-align: center; box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+  background: rgba(30, 30, 60, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 }
 .skills-logos {
-  position: absolute; top: -100px; left: 50%;
-  width: 300px; height: 100px; transform: translateX(-50%);
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 300px;
+  height: 100px;
+  transform: translateX(-50%);
   pointer-events: none;
 }
 .skill-logo {
-  position: absolute; width: 60px; height: 60px;
-  opacity: 0; transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  transition: all 1s cubic-bezier(.68, -0.55, .27, 1.55);
 }
-#logo-python { left: 0;   top: 40px; }
-#logo-java   { left: 40px; top: 0; }
+/* logo positions (arc of circle) */
+#logo-python { left:   0px; top:  40px; }
+#logo-java   { left:  40px; top:   0px; }
 #logo-spark  { left: 130px; top: -20px; }
-#logo-cpp    { left: 220px; top: 0; }
-#logo-js     { left: 260px; top: 40px; }
+#logo-cpp    { left: 220px; top:   0px; }
+#logo-js     { left: 260px; top:  40px; }
 .skills-logos.visible .skill-logo {
-  opacity: 1; transform: translateY(-30px) scale(1.1);
+  opacity: 1;
+  transform: translateY(-30px) scale(1.1);
 }
 
-/* animations */
+/* ---------------- Animations ---------------- */
 @keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
