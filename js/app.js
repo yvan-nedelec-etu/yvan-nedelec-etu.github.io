@@ -30,3 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
         languagesSection.appendChild(langElement);
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const skillsLogos = document.querySelector('.skills-logos');
+    const skillsSection = document.querySelector('.skills-section');
+    window.addEventListener('scroll', function() {
+        const rect = skillsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.7) {
+            skillsLogos.classList.add('visible');
+        }
+    });
+});

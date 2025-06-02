@@ -119,3 +119,60 @@ h1 {
     text-decoration: none;
     font-size: 1.5rem;
 }
+
+.skills-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    margin-top: 100px;
+}
+
+.skills-container {
+    position: relative;
+    width: 400px;
+    margin-top: 200px;
+}
+
+.skills-text {
+    background: rgba(30, 30, 60, 0.7);
+    border-radius: 30px;
+    padding: 40px 30px;
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.skills-logos {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    width: 320px;
+    height: 120px;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.skill-logo {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Positionnement en arc de cercle */
+#logo-python   { left: 0;   top: 60px;  }
+#logo-java     { left: 40px; top: 10px; }
+#logo-spark    { left: 130px; top: -20px; }
+#logo-cpp      { left: 220px; top: 10px; }
+#logo-js       { left: 260px; top: 60px; }
+
+/* Animation visible */
+.skills-logos.visible .skill-logo {
+    opacity: 1;
+    transform: translateY(-40px) scale(1.1);
+}
