@@ -1,25 +1,11 @@
-const menuButton = document.querySelector('.menu-button');
-const navMenu = document.querySelector('.nav-menu');
-
-menuButton.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuButton.classList.toggle('active');
-});
-
-// Close the menu when a link is clicked
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuButton.classList.remove('active');
-    });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.getElementById('burger');
-  const nav    = document.getElementById('nav');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    nav.classList.toggle('open');
+  const skillsSection = document.querySelector('.skills-section');
+  const logos         = document.querySelector('.skills-logos');
+
+  window.addEventListener('scroll', () => {
+    const rect = skillsSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.7) {
+      logos.classList.add('visible');
+    }
   });
 });

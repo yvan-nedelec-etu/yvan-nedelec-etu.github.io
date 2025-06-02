@@ -9,33 +9,31 @@
 </head>
 <body>
     <header>
-        <div class="burger-menu" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="nav-menu" id="nav">
-            <ul>
-                <li style="--delay:0.1s"><a href="index.html">Accueil</a></li>
-                <li style="--delay:0.2s"><a href="about.html">À propos</a></li>
-                <li style="--delay:0.3s"><a href="projects.html">Projets</a></li>
-                <li style="--delay:0.4s"><a href="summary.html">Bilan</a></li>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="about.html">À propos</a></li>
+                <li class="nav-item"><a href="projects.html">Projets</a></li>
+                <li class="nav-item"><a href="summary.html">Bilan</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
+        <!-- Section d'accueil -->
         <section class="welcome-section">
             <h1>Bienvenue sur mon portfolio !</h1>
             <img src="assets/profile.jpg" alt="Photo de profil" class="profile-photo">
         </section>
 
+        <!-- Section compétences -->
         <section class="skills-section">
             <div class="skills-container">
                 <div class="skills-logos">
-                    <img src="assets/python.png" alt="Python" class="skill-logo" id="logo-python">
-                    <img src="assets/java.png" alt="Java" class="skill-logo" id="logo-java">
-                    <img src="assets/spark.png" alt="Spark" class="skill-logo" id="logo-spark">
-                    <img src="assets/cpp.png" alt="C++" class="skill-logo" id="logo-cpp">
+                    <img src="assets/python.png"   alt="Python"      class="skill-logo" id="logo-python">
+                    <img src="assets/java.png"     alt="Java"        class="skill-logo" id="logo-java">
+                    <img src="assets/spark.png"    alt="Spark"       class="skill-logo" id="logo-spark">
+                    <img src="assets/cpp.png"      alt="C++"         class="skill-logo" id="logo-cpp">
                     <img src="assets/javascript.png" alt="JavaScript" class="skill-logo" id="logo-js">
                 </div>
                 <div class="skills-text">
@@ -48,7 +46,7 @@
             </div>
         </section>
     </main>
-    <script src="js/menu.js"></script>
+
     <script src="js/app.js"></script>
 </body>
 </html>

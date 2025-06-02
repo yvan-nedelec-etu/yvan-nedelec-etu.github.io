@@ -1,54 +1,16 @@
-// Main JavaScript logic for the portfolio
 document.addEventListener('DOMContentLoaded', () => {
-    const burgerMenu = document.querySelector('.burger-menu');
-    const navLinks = document.querySelector('.nav-links');
-    const languagesSection = document.querySelector('.languages');
-    
-    // Toggle the burger menu
-    burgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        burgerMenu.classList.toggle('toggle');
-    });
+  const burger = document.getElementById('burger');
+  const nav    = document.getElementById('nav');
 
-    // Animate the languages section
-    const languages = ['Python', 'Java', 'Spark', 'C++', 'JavaScript'];
-    let angle = 0;
-    const radius = 150; // Radius for arc positioning
-
-    languages.forEach((language, index) => {
-        const langElement = document.createElement('div');
-        langElement.classList.add('language');
-        langElement.innerText = language;
-
-        // Calculate position
-        angle += (360 / languages.length);
-        const x = radius * Math.cos(angle * (Math.PI / 180));
-        const y = radius * Math.sin(angle * (Math.PI / 180));
-
-        langElement.style.position = 'absolute';
-        langElement.style.transform = `translate(${x}px, ${y}px)`;
-        languagesSection.appendChild(langElement);
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+  // refermer menu au clic sur lien
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      nav.classList.remove('open');
     });
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const skillsLogos = document.querySelector('.skills-logos');
-    const skillsSection = document.querySelector('.skills-section');
-    window.addEventListener('scroll', function() {
-        const rect = skillsSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.7) {
-            skillsLogos.classList.add('visible');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.getElementById('burger-menu');
-    const nav = document.getElementById('nav-menu');
-    burger.addEventListener('click', function() {
-        nav.classList.toggle('open');
-    });
-    // Optionnel : refermer le menu quand on clique sur un lien
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => nav.classList.remove('open'));
-    });
+  });
 });
