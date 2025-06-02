@@ -17,8 +17,10 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background: url('../assets/background.jpg') no-repeat center/cover;
   filter: blur(8px);
   z-index: -1;
@@ -27,18 +29,24 @@ body::before {
 /* --------------- Navbar (Header) ------------- */
 header {
   position: fixed;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   width: 100%;
   background: rgba(20, 20, 40, 0.8);
   backdrop-filter: blur(6px);
   z-index: 1000;
+  /* Ajustement de la hauteur et de l'alignement */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar .nav-list {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 1rem 0;
+  padding: 0;
 }
 .navbar .nav-item a {
   color: #fff;
@@ -51,7 +59,7 @@ header {
   color: #a7bfff;
 }
 
-/* push content below header */
+/* Pousse le contenu sous la navbar */
 main {
   padding-top: 80px;
 }
@@ -116,7 +124,7 @@ main {
   opacity: 0;
   transition: all 1s cubic-bezier(.68, -0.55, .27, 1.55);
 }
-/* logo positions (arc of circle) */
+/* Positionnement en arc de cercle */
 #logo-python { left:   0px; top:  40px; }
 #logo-java   { left:  40px; top:   0px; }
 #logo-spark  { left: 130px; top: -20px; }
