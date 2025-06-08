@@ -460,3 +460,30 @@ main {
   background: #eaeaea;
   transform: translate(-50%, -3px); /* conserve le translateX(-50%) et ajoute un translateY(-3px) */
 }
+
+.alternance-intro {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.alternance-img {
+  width: 100%;
+  height: auto;             /* Permet d'afficher l'image en entier */
+  max-width: 400px;         /* Réduit la taille globale de l'image */
+  object-fit: contain;      /* Affiche l'image complète sans la cropper */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.alternance-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.alternance-intro p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+}
