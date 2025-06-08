@@ -470,6 +470,8 @@ main {
 
 .alternance-img {
   width: 100%;
+  margin: 0 auto;
+  display: block;           /* Centrer l'image */
   height: auto;             /* Permet d'afficher l'image en entier */
   max-width: 400px;         /* Réduit la taille globale de l'image */
   object-fit: contain;      /* Affiche l'image complète sans la cropper */
@@ -486,4 +488,26 @@ main {
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: justify;
+}
+
+.alternance-details {
+  max-width: 800px;
+  margin: 40px auto;         /* Centrage et espace vertical */
+  background: rgba(30, 30, 60, 0.7);  /* Fond sombre semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: justify;
+}
+
+/* Optionnel : centrer le titre à l'intérieur du carré */
+.alternance-details h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Règler l'espacement entre les paragraphes */
+.alternance-details p {
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
