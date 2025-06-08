@@ -13,30 +13,91 @@
         <li class="nav-item"><a href="index.html">Accueil</a></li>
         <li class="nav-item"><a href="about.html">À propos</a></li>
         <li class="nav-item"><a href="projects.html">Projets</a></li>
-        <li class="nav-item"><a href="summary.html">Bilan</a></li>
+        <li class="nav-item"><a href="bilan.html">Bilan</a></li>
         </ul>
     </nav>
     </header>
-    <main>
-        <section class="projects">
-            <h1>My Projects</h1>
-            <div class="project-list">
-                <div class="project-item">
-                    <h2>Project Title 1</h2>
-                    <p>Description of project 1. This project involves...</p>
-                </div>
-                <div class="project-item">
-                    <h2>Project Title 2</h2>
-                    <p>Description of project 2. This project focuses on...</p>
-                </div>
-                <div class="project-item">
-                    <h2>Project Title 3</h2>
-                    <p>Description of project 3. This project showcases...</p>
-                </div>
-                <!-- Add more projects as needed -->
-            </div>
-        </section>
-    </main>
+<main>
+<section class="projects">
+  <h1>Liste non exhaustive des projets</h1>
+  <div class="project-list">
+    <!-- Datavizualisation -->
+    <div class="project-bubble" data-project="1" data-title="Datavizualisation" data-image="assets/project1.jpg">
+      <img src="assets/project1.jpg" alt="Datavizualisation">
+      <div class="project-info">
+         <h3>Datavisualisation</h3>
+         <button class="detail-button">Voir en détail</button>
+      </div>
+    </div>
+    <!-- Séries chronologiques -->
+    <div class="project-bubble" data-project="2" data-title="Séries chronologiques" data-image="assets/project2.jpg">
+      <img src="assets/project2.jpg" alt="Séries chronologiques">
+      <div class="project-info">
+         <h3>Séries chronologiques</h3>
+         <button class="detail-button">Voir en détail</button>
+      </div>
+    </div>
+    <!-- Enquête sur les logements étudiants -->
+    <div class="project-bubble" data-project="3" data-title="Enquête sur les logements étudiants" data-image="assets/project3.jpg">
+      <img src="assets/project3.jpg" alt="Enquête sur les logements étudiants">
+      <div class="project-info">
+         <h3>Enquête sur les logements étudiants</h3>
+         <button class="detail-button">Voir en détail</button>
+      </div>
+    </div>
+    <!-- Site web PHP & JavaScript -->
+    <div class="project-bubble" data-project="4" data-title="Site web PHP &amp; JavaScript" data-image="assets/project4.jpg">
+      <img src="assets/project4.jpg" alt="Site web PHP &amp; JavaScript">
+      <div class="project-info">
+         <h3>Site web PHP &amp; JavaScript</h3>
+         <button class="detail-button">Voir en détail</button>
+      </div>
+    </div>
+    <!-- Collecte de données web -->
+    <div class="project-bubble" data-project="5" data-title="Collecte de données web" data-image="assets/project5.jpg">
+      <img src="assets/project5.jpg" alt="Collecte de données web">
+      <div class="project-info">
+         <h3>Collecte de données web</h3>
+         <button class="detail-button">Voir en détail</button>
+      </div>
+    </div>
+    <!-- Présentation d'un territoire économique et culturel -->
+    <div class="project-bubble" data-project="6" data-title="Présentation d'un territoire économique et culturel" data-image="assets/project6.jpg">
+      <img src="assets/project6.jpg" alt="Présentation d'un territoire économique et culturel">
+      <div class="project-info">
+         <h3>Présentation d'un territoire économique et culturel</h3>
+         <button class="detail-button">Voir en détail</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Modal pour la vue détaillée du projet -->
+  <div class="project-modal" id="project-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <img src="" alt="Project Detail" id="modal-image">
+      <h2 id="modal-title">Titre du Projet</h2>
+      <div class="modal-tabs">
+          <button class="tab-button active" data-tab="attendus">Attendus</button>
+          <button class="tab-button" data-tab="difficultes">Difficultés</button>
+          <button class="tab-button" data-tab="competences">Compétences</button>
+      </div>
+      <div class="modal-tab-content">
+          <div class="tab-content active" id="attendus">
+              <p>Ici, présentez les attendus du projet...</p>
+          </div>
+          <div class="tab-content" id="difficultes">
+              <p>Ici, décrivez les difficultés rencontrées...</p>
+          </div>
+          <div class="tab-content" id="competences">
+              <p>Ici, listez les compétences développées...</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</main>
     <script src="js/menu.js"></script>
+    <script src="js/projets.js"></script>
 </body>
 </html>
