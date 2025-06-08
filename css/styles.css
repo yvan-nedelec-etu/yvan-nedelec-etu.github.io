@@ -1,4 +1,9 @@
 /* ---------------- Reset & Font ---------------- */
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +13,11 @@ html, body {
   height: 100%;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(30, 30, 60, 0.9);
+  color: #a7bfff;
+  font-size: 16px;
+  line-height: 1.6;
   color: #fff;
   overflow-x: hidden;
 }
@@ -267,14 +276,13 @@ main {
   object-fit: cover;
 }
 
+/* Conteneur info : on fixe une hauteur suffisante */
 .project-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;  /* Espace le titre et le bouton */
-  align-items: center;
+  position: relative;
   padding: 10px;
   background: rgba(0,0,0,0.5);
-  height: 80px; /* Ajuste cette valeur selon ton design */
+  /* Augmente la hauteur pour s'assurer que 3 lignes ne gênent pas le bouton */
+  height: 120px;
 }
 
 .project-info h3 {
@@ -283,25 +291,29 @@ main {
   color: #fff;
   text-align: center;
   line-height: 1.2;
-  min-height: calc(1.2em * 2); /* suffit pour deux lignes */
-  /* Optionnel : si tu veux forcer la coupe au maximum de deux lignes, garde les lignes suivantes
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3; /* limite à 3 lignes */
   -webkit-box-orient: vertical;
-  */
+  padding-bottom: 50px; /* espace réservé pour le bouton */
 }
 
+/* Le bouton occupe toute la largeur (moins le padding) et est fixé en bas */
 .detail-button {
-  margin-top: 5px;
-  padding: 6px 12px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  padding: 6px 0;
   background: #fff;
+  font-family: inherit;
+  color: #000;
+  text-align: center;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   font-size: 0.8rem;
 }
-
 /* Effet de survol */
 .project-bubble:hover {
   transform: scale(1.05);
@@ -323,6 +335,9 @@ main {
 
 .modal-content {
   background: #1e1e3f;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   border-radius: 10px;
   padding: 20px;
   width: 90%;
@@ -415,4 +430,33 @@ main {
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.cv-button {
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+    /* Centré horizontalement */
+  background: rgba(30, 30, 60, 0.7);
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 12px 30px; /* Plus grand que les boutons des projets */
+  background: #fff;
+  color: #000;
+  font-family: inherit;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cv-button:hover {
+  background: #eaeaea;
+  transform: translate(-50%, -3px); /* conserve le translateX(-50%) et ajoute un translateY(-3px) */
 }
