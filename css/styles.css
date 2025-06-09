@@ -109,7 +109,7 @@ main {
 .skills-container {
   position: relative;
   width: 700px;
-  margin: -150px auto 0 auto;
+  margin: auto auto 0 auto;
   /* On retire le margin-top négatif pour que le carré reste bien centré */
   /* margin-top: -200px; */
 }
@@ -433,17 +433,11 @@ main {
   text-align: center;
 }
 
+/* Mettre le bouton CV dans le flux normal pour qu'il s'affiche juste en dessous de la photo */
 .cv-button {
   display: inline-block;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-    /* Centré horizontalement */
-  background: rgba(30, 30, 60, 0.7);
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 12px 30px; /* Plus grand que les boutons des projets */
+  margin: 20px auto; /* Centré et espacé de la photo */
+  padding: 12px 30px;
   background: #fff;
   color: #000;
   font-family: inherit;
@@ -459,7 +453,7 @@ main {
 
 .cv-button:hover {
   background: #eaeaea;
-  transform: translate(-50%, -3px); /* conserve le translateX(-50%) et ajoute un translateY(-3px) */
+  transform: translateY(-3px);
 }
 
 .alternance-intro {
