@@ -9,16 +9,17 @@ p {
   margin: 0;
   padding: 0;
 }
+
 html, body {
   height: 100%;
 }
+
 body {
   font-family: 'JetBrains Mono', monospace;
   background: rgba(30, 30, 60, 0.9);
-  color: #a7bfff;
+  color: #fff;
   font-size: 16px;
   line-height: 1.6;
-  color: #fff;
   overflow-x: hidden;
 }
 
@@ -50,6 +51,7 @@ header {
   justify-content: center;
   border-radius: 0 0 10px 10px; /* Arrondit uniquement le bas */
 }
+
 .navbar .nav-list {
   list-style: none;
   display: flex;
@@ -57,6 +59,7 @@ header {
   gap: 2rem;
   padding: 0;
 }
+
 .navbar .nav-item a {
   color: #fff;
   text-decoration: none;
@@ -64,6 +67,7 @@ header {
   font-size: 1.1rem;
   transition: color 0.3s;
 }
+
 .navbar .nav-item a:hover {
   color: #a7bfff;
 }
@@ -83,10 +87,12 @@ main {
   text-align: center;
   padding: 0 20px;
 }
+
 .welcome-section h1 {
   font-size: 3rem;
   animation: fadeIn 1.5s ease-in-out;
 }
+
 .profile-photo {
   width: 300px;
   height: 300px;
@@ -106,13 +112,13 @@ main {
   align-items: center;     /* centre horizontalement tout le contenu */
   padding-top: 80px;
 }
+
 .skills-container {
   position: relative;
   width: 700px;
   margin: auto auto 0 auto;
-  /* On retire le margin-top négatif pour que le carré reste bien centré */
-  /* margin-top: -200px; */
 }
+
 .skills-text {
   background: rgba(30, 30, 60, 0.7);
   border-radius: 20px;
@@ -123,11 +129,11 @@ main {
 
 .skills-logos {
   display: flex;
-  justify-content: space-evenly; /* ou space-around pour espacer */
+  justify-content: space-evenly;
   align-items: center;
-  width: 100%;  /* occupe toute la largeur du container */
-  margin-bottom: 20px; /* espace entre les logos et le carré de texte */
-  position: relative; /* ou static, selon ton besoin */
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 /* Taille par défaut pour les logos */
@@ -138,29 +144,31 @@ main {
 
 /* Pour agrandir uniquement le logo Spark */
 #logo-spark {
-  width: 100px; /* augmente sa taille */
+  width: 100px;
 }
+
 /* Positionnement en arc de cercle */
-#logo-python { left:   0px; top:  40px; }
-#logo-java   { left:  40px; top:   0px; }
+#logo-python { left: 0px; top: 40px; }
+#logo-java   { left: 40px; top: 0px; }
 #logo-spark  { left: 130px; top: -20px; }
-#logo-pbi    { left: 220px; top:   0px; }
-#logo-js     { left: 260px; top:  40px; }
+#logo-pbi    { left: 220px; top: 0px; }
+#logo-js     { left: 260px; top: 40px; }
+
 .skills-logos.visible .skill-logo {
   opacity: 1;
   transform: translateY(-30px) scale(1.1);
 }
 
-/* Ou, si tu as besoin de garder ce margin-top négatif, augmente le margin-top des logos extra */
+/* Logos extra */
 .extra-logos {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 700px; /* ou ajuster à la largeur souhaitée */
-  margin: 150px auto 0 auto; /* espace augmenté pour placer les logos en dessous */
+  width: 700px;
+  margin: 150px auto 0 auto;
 }
 .extra-logo {
-  width: 210px; /* ajuster la taille selon tes besoins */
+  width: 210px;
   height: auto;
 }
 
@@ -169,15 +177,16 @@ main {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-/* Style pour les 4 cases de texte en haut de chaque page */
+
+/* Cases de texte (intro-cards) */
 .intro-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin: 80px auto;
   width: 90%;
   max-width: 1200px;
-  text-align:justify;
+  text-align: justify;
 }
 
 .card {
@@ -204,7 +213,6 @@ main {
   font-size: 1rem;
   line-height: 1.5;
   text-align: justify;
-
 }
 
 @media (max-width: 600px) {
@@ -212,6 +220,8 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* Bilan cards */
 .bilan-cards {
   display: flex;
   flex-direction: column;
@@ -240,7 +250,8 @@ main {
   text-align: justify;
   line-height: 1.6;
 }
-/* Spécifique à la page bilan universitaire */
+
+/* Section résumé pour bilan */
 .summary-intro {
   text-align: center;
   margin: 40px auto;
@@ -248,11 +259,11 @@ main {
   max-width: 800px;
 }
 
-/* Styles pour afficher les projets sous forme de carrés espacés */
+/* Projets en carrés */
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px; /* espace entre les cases */
+  gap: 30px;
   margin: 40px auto;
   max-width: 1200px;
   width: 90%;
@@ -262,7 +273,7 @@ main {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 10px; /* angles arrondis */
+  border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s;
   background: #fff;
@@ -272,17 +283,14 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  /* Optionnel : pour une hauteur fixe, on peut forcer un aspect ratio */
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-/* Conteneur info : on fixe une hauteur suffisante */
 .project-info {
   position: relative;
   padding: 10px;
   background: rgba(0,0,0,0.5);
-  /* Augmente la hauteur pour s'assurer que 3 lignes ne gênent pas le bouton */
   height: 120px;
 }
 
@@ -294,12 +302,11 @@ main {
   line-height: 1.2;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* limite à 3 lignes */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  padding-bottom: 50px; /* espace réservé pour le bouton */
+  padding-bottom: 50px;
 }
 
-/* Le bouton occupe toute la largeur (moins le padding) et est fixé en bas */
 .detail-button {
   position: absolute;
   bottom: 10px;
@@ -315,12 +322,12 @@ main {
   cursor: pointer;
   font-size: 0.8rem;
 }
-/* Effet de survol */
+
 .project-bubble:hover {
   transform: scale(1.05);
 }
 
-/* Modal (reste inchangé) */
+/* Modal */
 .project-modal {
   position: fixed;
   top: 0;
@@ -396,16 +403,13 @@ main {
 
 /* Responsive global */
 @media (max-width: 768px) {
-  /* Navbar : adaptez la taille et l'espacement si besoin */
   .navbar .nav-list {
     gap: 1rem;
   }
-  /* Projets : passage en une colonne pour la grille */
   .project-list {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  /* Modal : ajustement des éléments */
   .modal-content {
     width: 95%;
     padding: 15px;
@@ -413,7 +417,6 @@ main {
 }
 
 @media (max-width: 480px) {
-  /* Ajustement spécifique pour les petits écrans */
   .project-info h3 {
     font-size: 0.9rem;
   }
@@ -421,7 +424,6 @@ main {
     padding: 4px 8px;
     font-size: 0.7rem;
   }
-  /* Réduction des marges autour des sections */
   section.projects h1 {
     font-size: 1.5rem;
   }
@@ -433,10 +435,10 @@ main {
   text-align: center;
 }
 
-/* Mettre le bouton CV dans le flux normal pour qu'il s'affiche juste en dessous de la photo */
+/* Bouton CV */
 .cv-button {
   display: inline-block;
-  margin: 20px auto; /* Centré et espacé de la photo */
+  margin: 20px auto;
   padding: 12px 30px;
   background: #fff;
   color: #000;
@@ -456,6 +458,7 @@ main {
   transform: translateY(-3px);
 }
 
+/* Alternance */
 .alternance-intro {
   text-align: center;
   padding: 40px 20px;
@@ -466,10 +469,10 @@ main {
 .alternance-img {
   width: 100%;
   margin: 0 auto;
-  display: block;           /* Centrer l'image */
-  height: auto;             /* Permet d'afficher l'image en entier */
-  max-width: 400px;         /* Réduit la taille globale de l'image */
-  object-fit: contain;      /* Affiche l'image complète sans la cropper */
+  display: block;
+  height: auto;
+  max-width: 400px;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -487,34 +490,33 @@ main {
 
 .alternance-details {
   max-width: 800px;
-  margin: 40px auto;         /* Centrage et espace vertical */
-  background: rgba(30, 30, 60, 0.7);  /* Fond sombre semi-transparent */
+  margin: 40px auto;
+  background: rgba(30, 30, 60, 0.7);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: justify;
 }
 
-/* Optionnel : centrer le titre à l'intérieur du carré */
 .alternance-details h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Règler l'espacement entre les paragraphes */
 .alternance-details p {
   margin-bottom: 20px;
   line-height: 1.6;
 }
 
-*.contact-info {
+/* Contact */
+.contact-info {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
 }
 
 .contact-card {
-  background: rgba(30, 30, 60, 0.7); /* Fond sombre semi-transparent */
+  background: rgba(30, 30, 60, 0.7);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -544,4 +546,97 @@ main {
   font-size: 1.2rem;
   margin-top: 10px;
   text-align: center;
+}
+
+/* Footer */
+footer {
+  background: rgba(20, 20, 40, 0.8);
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-linkedin {
+  width: 30px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.footer-linkedin:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive pour tablettes et écrans moyens jusqu'à 1024px */
+@media (max-width: 1024px) {
+  header {
+    padding: 0 10px;
+  }
+  .skills-container,
+  .extra-logos,
+  .intro-cards,
+  .project-list {
+    width: 95%;
+  }
+}
+
+/* Responsive pour tablettes (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar .nav-list {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .intro-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Responsive pour mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar .nav-item a {
+    font-size: 0.9rem;
+  }
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+  .cv-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  .projects h1,
+  section.projects h1 {
+    font-size: 1.5rem;
+  }
+  .project-info h3 {
+    font-size: 0.9rem;
+  }
+  .detail-button {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
 }
