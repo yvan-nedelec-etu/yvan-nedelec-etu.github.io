@@ -506,3 +506,42 @@ main {
   margin-bottom: 20px;
   line-height: 1.6;
 }
+
+*.contact-info {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contact-card {
+  background: rgba(30, 30, 60, 0.7); /* Fond sombre semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.contact-image:hover {
+  transform: scale(1.05);
+}
+
+.contact-card p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+}
