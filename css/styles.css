@@ -236,8 +236,9 @@ main {
 
 .bilan-card p {
   font-size: 1rem;
+  margin-bottom: 20px;
   text-align: justify;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 /* Spécifique à la page bilan universitaire */
 .summary-intro {

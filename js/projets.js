@@ -38,7 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
       attendus: "Dans ce projet nous devions présenter une ville en particulier, son côté attractif et touristique, en anglais et en français. Nous devions faire nos propres recherches, et faire une présentation d'une vingtaine de minutes. Ce projet permettait de commencer à se familiariser avec les passages à l'oral et il était le premier projet universitaire de première année. Nous avons présenté Tokyo.",
       difficultes: "La principale difficulté était de trouver des informations pertinentes et fiables sur la ville choisie, ainsi que de structurer la présentation de manière cohérente.",
       competences: "Nous avons développé des compétences en recherche d'informations, en structuration de présentations et en communication orale. Nous avons également appris à travailler en équipe pour préparer une présentation efficace."
-    }
+    },
+      "7": {
+      attendus: "Ce projet portait sur l'établissement d'un tableau de bord répertoriant un ensemble de joueurs de football, leurs performances, et les statistiques de leurs matchs. Le but était de créer une application VBA interactive permettant de visualiser les performances de chaque joueur. Nous avons utilisé Excel pour manipuler les données et créer des graphiques interactifs. Nous avons aussi utilisé des liens hypertextes sur chaque joueur d'un tableau qui l'emmène sur ses statistiques distinctes.",
+      difficultes: "Le tableau de bord individuel et la création de graphiques interactifs par joueur ont été les principaux défis.",
+      competences: "Nous avons renforcé nos compétences en Excel, en VBA pour automatiser les tâches, et en visualisation de données. Nous avons également appris à travailler avec des données sportives et à créer des tableaux de bord interactifs."
+  },
+  "8": {
+      attendus: "Ce projet de 1ère année portait sur la création d'une base de données avec une interface sur PhpMyAdmin, et l'alimentation de celle-ci sur une application Python sous la librarie Tkinter. Pour finir, nous devions créer un affichage Tkinter pour visualiser les données de la base.",
+      difficultes: "La principale difficulté était de gérer la communication entre la base de données et l'application Python, ainsi que de s'assurer que les données étaient correctement affichées dans l'interface.",
+      competences: "Nous avons acquis des compétences en gestion de bases de données, en développement d'applications Python avec Tkinter, et en intégration de bases de données dans des applications. Nous avons également appris à structurer et à interroger des bases de données relationnelles."
+  }
   };
 
   // Gestion de l'ouverture de la modal
