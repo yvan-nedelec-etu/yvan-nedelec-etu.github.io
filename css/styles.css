@@ -290,7 +290,7 @@ main {
 .project-info {
   position: relative;
   padding: 10px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(20, 20, 40, 1); /*Même couleur que la navbar en mode opaque*/
   height: 120px;
 }
 
