@@ -3,70 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Yvan NEDELEC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <title>Yvan NÉDÉLEC - Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item"><a href="index.html">Accueil</a></li>
-        <li class="nav-item"><a href="about.html">À propos</a></li>
-        <li class="nav-item"><a href="projects.html">Projets</a></li>
-        <li class="nav-item"><a href="bilan.html">Bilan</a></li>
-        <li class="nav-item"><a href="alternance.html">Mon alternance</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="page-index">
 
-  <main>
-    <section class="welcome-section">
-      <h1>&gt; 📖 Bienvenue sur mon portfolio !</h1>
-      <img src="assets/profile.jpg" alt="Photo de profil" class="profile-photo">
-    </section>
+<div class="video-bg">
+  <video autoplay loop muted playsinline>
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4" type="video/mp4">
+  </video>
+</div>
+<canvas id="bg"></canvas>
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/>
+    <feComposite in2="SourceGraphic" operator="in" result="noise"/>
+    <feBlend in="SourceGraphic" in2="noise" mode="multiply"/>
+  </filter>
+</svg>
+<div class="guide-left"></div>
+<div class="guide-right"></div>
 
-    <!-- Section compétences -->
-    <section class="skills-section">
-      <div class="skills-container">
-        <div class="skills-logos">
-          <img src="assets/python.png" alt="Python" class="skill-logo" id="logo-python">
-          <img src="assets/java.png" alt="Java" class="skill-logo" id="logo-java">
-          <img src="assets/scala.png" alt="Spark" class="skill-logo" id="logo-spark">
-          <img src="assets/pbi.png" alt="Powerbi" class="skill-logo" id="logo-pbi">
-          <img src="assets/js.png" alt="JavaScript" class="skill-logo" id="logo-js">
-        </div>
-        <div class="skills-text">
-          <h2>Mon portfolio</h2>
-          <p>
-            Ceci est mon portfolio universitaire. Il présente mes compétences en data et mes projets réalisés dans le cadre de ma formation.<br>
-            Vous y trouverez une rubrique "À propos de moi" qui parle de mon parcours, ainsi qu'une section "Mes projets" qui détaille les travaux que j'ai réalisés.<br>
-            Enfin, une section "Bilan" résume mes compétences et mes objectifs professionnels.<br>
-            Pour finir, vous trouverez une section "Mon alternance" qui présente mon expérience professionnelle actuelle.<br>
-            <br>
-            N'hésitez pas à parcourir les différentes sections pour en savoir plus sur moi et mon travail !
-          </p>
-        </div>
-      </div>
-      <div class="extra-logos">
-        <img src="assets/iut.png" alt="Logo IUT" class="extra-logo">
-        <img src="assets/univ.png" alt="Logo Université" class="extra-logo">
-        <img src="assets/sd.png" alt="Logo SD" class="extra-logo">
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <p>Yvan NEDELEC © 2025 | Mail : <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a></p>
-      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank">
-        <img src="assets/linkedin.png" alt="LinkedIn" class="footer-linkedin">
-      </a>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="logomark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2"  y="2"  width="11" height="11" rx="2" fill="white" fill-opacity="0.9"/>
+        <rect x="15" y="2"  width="11" height="11" rx="2" fill="white" fill-opacity="0.4"/>
+        <rect x="2"  y="15" width="11" height="11" rx="2" fill="white" fill-opacity="0.4"/>
+        <rect x="15" y="15" width="11" height="11" rx="2" fill="white" fill-opacity="0.7"/>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projects.html">Projets</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html">Alternance</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </footer>
-    
-  <script src="js/app.js"></script>
+    <button id="burger" aria-label="Ouvrir le menu">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <rect y="0"    width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="5.25" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="10.5" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div id="nav-mobile">
+  <button id="nav-mobile-close" aria-label="Fermer">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="projects.html">Projets</a>
+  <a href="bilan.html">Bilan</a>
+  <a href="alternance.html">Alternance</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="macos-bar">
+  <div class="macos-bar-left">
+    <div class="traffic-lights">
+      <span class="traffic-light" style="background:#ff5f57"></span>
+      <span class="traffic-light" style="background:#febc2e"></span>
+      <span class="traffic-light" style="background:#28c840"></span>
+    </div>
+    <span class="macos-sep"></span>
+    <span class="macos-app-name">Portfolio - Yvan Nédélec</span>
+    <div class="macos-menu-items">
+      <a href="about.html">Profil</a>
+      <a href="projects.html">Projets</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html">MAIF</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="macos-bar-right">Arval BNP Paribas · sept. 2026</div>
+</div>
+
+<main>
+
+  <div class="site-header fade-up">
+    <div class="header-left">
+      <h1 class="site-name"><span class="shiny-text">Yvan</span> Nédélec</h1>
+      <p class="site-tagline">Data Analyst à la MAIF - migration SAS vers Python. Data Scientist / AI Engineer chez Arval BNP Paribas dès septembre 2026 - cycle ingénieur Big Data &amp; ML, EFREI Bordeaux.</p>
+    </div>
+    <a href="contact.html" class="btn-glass liquid-glass">Me contacter</a>
+  </div>
+
+  <div class="bento-grid">
+
+    <!-- 1 - Bio / Photo -->
+    <div class="bento-card bento-bio bento-1 fade-up">
+      <img src="assets/profile.jpg" class="bento-bg-img" alt="Yvan Nédélec">
+      <div class="bento-bg-overlay"></div>
+      <div class="bento-label"><span class="sparkle">✦</span> PARCOURS <span class="sparkle">✦</span></div>
+      <div class="bento-timeline">
+        <div class="btl-entry">
+          <span class="btl-year">2026</span>
+          <span class="btl-sep">✦</span>
+          <span class="btl-text">Data Scientist / AI Engineer - Arval BNP Paribas x EFREI Bordeaux</span>
+        </div>
+        <div class="btl-entry">
+          <span class="btl-year">2023-25</span>
+          <span class="btl-sep">✦</span>
+          <span class="btl-text">Data Analyst alternant - MAIF Niort</span>
+        </div>
+        <div class="btl-entry">
+          <span class="btl-year">2022</span>
+          <span class="btl-sep">✦</span>
+          <span class="btl-text">B.U.T. Science des Données - IUT Niort</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 - Stack tech / Marquee -->
+    <div class="bento-card bento-tech-card bento-4 fade-up" data-delay="60">
+      <div class="bento-label"><span class="sparkle">✦</span> STACK QUOTIDIEN <span class="sparkle">✦</span></div>
+      <div class="marquee-wrapper">
+        <div class="marquee-row">
+          <div class="marquee-track ml">
+            <span class="tech-badge">Python</span><span class="tech-badge">SQL</span><span class="tech-badge">pandas</span><span class="tech-badge">sklearn</span><span class="tech-badge">MLflow</span><span class="tech-badge">Docker</span><span class="tech-badge">Spark</span><span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Python</span><span class="tech-badge">SQL</span><span class="tech-badge">pandas</span><span class="tech-badge">sklearn</span><span class="tech-badge">MLflow</span><span class="tech-badge">Docker</span><span class="tech-badge">Spark</span><span class="tech-badge">FastAPI</span>
+          </div>
+        </div>
+        <div class="marquee-row">
+          <div class="marquee-track mr">
+            <span class="tech-badge">Power BI</span><span class="tech-badge">Tableau</span><span class="tech-badge">Streamlit</span><span class="tech-badge">MongoDB</span><span class="tech-badge">NoSQL</span><span class="tech-badge">LLM / RAG</span><span class="tech-badge">Airflow</span><span class="tech-badge">Git</span>
+            <span class="tech-badge">Power BI</span><span class="tech-badge">Tableau</span><span class="tech-badge">Streamlit</span><span class="tech-badge">MongoDB</span><span class="tech-badge">NoSQL</span><span class="tech-badge">LLM / RAG</span><span class="tech-badge">Airflow</span><span class="tech-badge">Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 - Contact -->
+    <div class="bento-card bento-contact-card bento-5 noise-overlay fade-up" data-delay="100">
+      <div class="bento-label"><span class="sparkle">✦</span> CONTACT <span class="sparkle">✦</span></div>
+      <div class="bento-contact-links">
+        <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr" class="bento-contact-item">yvan.nedelec@etu.univ-poitiers.fr</a>
+        <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank" rel="noopener" class="bento-contact-item">LinkedIn - yvan-nedelec ↗</a>
+      </div>
+      <a href="contact.html" class="bento-arrow-btn" aria-label="Page contact">↗</a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Yvan NÉDÉLEC <span class="footer-accent">©</span> 2026</span>
+    <div class="footer-links">
+      <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a>
+      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/particles.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

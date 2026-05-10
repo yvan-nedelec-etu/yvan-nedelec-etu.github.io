@@ -1,58 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon alternance chez MAIF</title>
+  <title>Alternance MAIF - Yvan NÉDÉLEC</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item"><a href="index.html">Accueil</a></li>
-        <li class="nav-item"><a href="about.html">À propos</a></li>
-        <li class="nav-item"><a href="projects.html">Projets</a></li>
-        <li class="nav-item"><a href="bilan.html">Bilan</a></li>
-        <li class="nav-item"><a href="alternance.html">Mon alternance</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <main>
-    <section class="alternance-intro">
-      <img src="assets/maif.png" alt="Mon alternance" class="alternance-img">
-      <h1>&gt; 📈 Mon alternance chez MAIF</h1>
-    </section>
-    
-    <section class="alternance-details">
-      <h2>Mon expérience</h2>
-      <p>
-        J'ai eu la chance de réaliser mon alternance au sein de la MAIF, une entreprise militantiste reconnue pour son engagement envers l'innovation et la qualité de service.
-        Mon rôle principal était celui de Data Analyst, où j'ai pu mettre en pratique mes compétences en analyse de données, en programmation, en traitement de base de données, et en gestion de bases de données.
-      </p>
-      <p>
-        Au cours de cette expérience, j'ai travaillé sur de nombreux projets sur SAS, sur un éditeur SQL, et sur VSCode, en particulier Python. En effet, l'entreprise se retrouve aujourd'hui face à des difficultés de paiement des licences SAS qui deviennent de plus en plus coûteuses. C'est pour ça que le patrimoine SAS de la MAIF va disparaître pour laisser place à Python. 
-        J'ai donc eu l'opportunité de participer à cette transition en développant des scripts Python pour remplacer les anciens processus basés sur SAS.
-      </p>
-      <p>
-        Cette expérience professionnelle est très enrichissante sur le plan professionnel comme personnel. J'ai pu développer mes compétences techniques, apprendre à travailler en équipe, et comprendre les enjeux réels de l'analyse de données dans un environnement professionnel.
-        De plus, j'ai eu l'occasion de collaborer avec des experts du domaine, d'échanger des idées et de contribuer à des projets concrets qui ont un impact direct sur l'entreprise.
-      </p>
-    </section>
-    
-    <script src="js/menu.js"></script>
-  </main>
-  
-  <footer>
-    <div class="footer-content">
-      <p>Yvan NEDELEC © 2025 | Mail : <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a></p>
-      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank">
-        <img src="assets/linkedin.png" alt="LinkedIn" class="footer-linkedin">
-      </a>
+
+<div class="video-bg">
+  <video autoplay loop muted playsinline>
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4" type="video/mp4">
+  </video>
+</div>
+<canvas id="bg"></canvas>
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/>
+    <feComposite in2="SourceGraphic" operator="in" result="noise"/>
+    <feBlend in="SourceGraphic" in2="noise" mode="multiply"/>
+  </filter>
+</svg>
+<div class="guide-left"></div>
+<div class="guide-right"></div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="logomark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2"  y="2"  width="11" height="11" rx="2" fill="white" fill-opacity="0.9"/>
+        <rect x="15" y="2"  width="11" height="11" rx="2" fill="white" fill-opacity="0.4"/>
+        <rect x="2"  y="15" width="11" height="11" rx="2" fill="white" fill-opacity="0.4"/>
+        <rect x="15" y="15" width="11" height="11" rx="2" fill="white" fill-opacity="0.7"/>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projects.html">Projets</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html" class="active">Alternance</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </footer>
+    <button id="burger" aria-label="Ouvrir le menu">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <rect y="0"    width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="5.25" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="10.5" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div id="nav-mobile">
+  <button id="nav-mobile-close" aria-label="Fermer">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="projects.html">Projets</a>
+  <a href="bilan.html">Bilan</a>
+  <a href="alternance.html">Alternance</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="macos-bar">
+  <div class="macos-bar-left">
+    <div class="traffic-lights">
+      <span class="traffic-light" style="background:#ff5f57"></span>
+      <span class="traffic-light" style="background:#febc2e"></span>
+      <span class="traffic-light" style="background:#28c840"></span>
+    </div>
+    <span class="macos-sep"></span>
+    <span class="macos-app-name">Alternance - Yvan Nédélec</span>
+    <div class="macos-menu-items">
+      <a href="about.html">Profil</a>
+      <a href="projects.html">Projets</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html" class="mac-active">MAIF</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="macos-bar-right">Arval BNP Paribas · sept. 2026</div>
+</div>
+
+<main>
+
+  <section class="alternance-hero">
+    <p class="eyebrow fade-up">// Alternance</p>
+    <img src="assets/maif.png" alt="MAIF" class="maif-logo fade-up" data-delay="100">
+    <h1 class="fade-up" data-delay="200">Data Analyst - MAIF</h1>
+  </section>
+
+  <div class="section">
+    <p class="eyebrow fade-up">Contexte de la mission</p>
+    <div class="bilan-single liquid-glass fade-up">
+      <p>La MAIF fait face à une hausse continue des coûts des licences SAS. Décision stratégique : migrer l'intégralité du patrimoine SAS vers Python. En contexte assurantiel, les pipelines de données sont critiques : qualité réglementaire, traçabilité, reproductibilité.</p>
+      <p>J'interviens sur cette migration en tant qu'alternant data analyst / data management officer, directement intégré à l'équipe chargée de la transition.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow fade-up">Mes missions</p>
+    <div class="bilan-single liquid-glass fade-up">
+      <ul class="numbered-list">
+        <li><span class="num">01.</span><span class="text">Analyse et compréhension des programmes SAS existants - souvent peu ou pas documentés.</span></li>
+        <li><span class="num">02.</span><span class="text">Réécriture fonctionnellement équivalente en Python (pandas, numpy, SQL).</span></li>
+        <li><span class="num">03.</span><span class="text">Tests de non-régression et validation des résultats avec les données de référence.</span></li>
+        <li><span class="num">04.</span><span class="text">Documentation technique Google-style pour chaque module livré.</span></li>
+        <li><span class="num">05.</span><span class="text">Collaboration avec les équipes métier pour comprendre les données et les règles implicites.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stats-row fade-up" style="margin-bottom: 80px;">
+    <div class="stat">
+      <div class="stat-num" data-target="-80" data-suffix="%">-80%</div>
+      <div class="stat-label">Temps d'exécution des pipelines</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="-60" data-suffix="%">-60%</div>
+      <div class="stat-label">Temps de passation entre équipes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="2" data-suffix=" ans+">2 ans+</div>
+      <div class="stat-label">Durée de la mission</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow fade-up">Ce que j'ai appris</p>
+    <div class="learn-grid fade-up">
+      <div class="learn-card liquid-glass">
+        <h3>Rigueur réglementaire</h3>
+        <p>Travailler sur des données qui ont un impact réel oblige à une précision que les projets académiques ne donnent pas. Chaque résultat doit être traçable et reproductible.</p>
+      </div>
+      <div class="learn-card liquid-glass">
+        <h3>Communication métier</h3>
+        <p>Traduire des besoins non exprimés en spécifications techniques. L'expertise n'est pas toujours là où on l'attend - les utilisateurs métier ont souvent la connaissance clé.</p>
+      </div>
+      <div class="learn-card liquid-glass">
+        <h3>Code maintenable</h3>
+        <p>Écrire pour celui qui reprend, pas pour soi. Docstring, tests, modules découplés. Un code qu'on ne peut pas reprendre dans 6 mois est un code à moitié livré.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow fade-up">Difficulté majeure surmontée</p>
+    <div class="bilan-single liquid-glass fade-up">
+      <p>Pipeline SAS de 2000+ lignes sans documentation. Logique métier enfouie dans des macros imbriquées, données d'entrée non décrites. J'ai reconstitué la logique par analyse systématique des entrées/sorties, croisement avec les experts métier, et tests de non-régression.</p>
+      <p>Réécriture Python en modules testés et documentés Google-style. Résultat : exécution -80%, maintenabilité totale pour l'équipe. Ce chantier a duré plusieurs semaines et a nécessité une discipline quotidienne pour ne pas perdre le fil.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Yvan NÉDÉLEC <span class="footer-accent">©</span> 2026</span>
+    <div class="footer-links">
+      <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a>
+      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/particles.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
