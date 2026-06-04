@@ -51,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
       attendus:    "Depuis un fichier .sql, concevoir et implémenter une migration complète vers MongoDB. Script Python de transformation (jointures → documents imbriqués JSON) + dashboard Streamlit connecté à la nouvelle base.",
       difficultes: "Dénormalisation du schéma relationnel, gestion des jointures en documents imbriqués, intégrité des données post-migration.",
       competences: "Migration de données, modélisation NoSQL, scripting Python avancé, Streamlit, paradigme relationnel vs document."
+    },
+    '11': {
+      attendus:    "Développer un chatbot conversationnel connecté à un LLM, avec un contexte personnalisé représentant mon parcours. L'utilisateur pose des questions du type « Qu'as-tu fait à la MAIF ? » ou « Quels sont tes projets ? » et obtient des réponses cohérentes et précises. Interface web dynamique, réponses en temps réel via streaming.",
+      difficultes: "Structurer et injecter un contexte riche sans dépasser les limites de fenêtre du modèle. Calibrer le prompt système pour des réponses naturelles, précises et non hallucinées. Gérer l'état de la conversation côté client.",
+      competences: "Prompt engineering, intégration LLM via API, JavaScript frontend (streaming SSE), gestion du contexte conversationnel, RAG conceptuel, déploiement web statique."
     }
   };
 

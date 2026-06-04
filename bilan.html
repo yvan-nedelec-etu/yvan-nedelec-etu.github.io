@@ -87,7 +87,7 @@
 
   <section class="page-hero">
     <p class="eyebrow fade-up">// Bilan</p>
-    <h1 class="fade-up" data-delay="150">Trois ans de formation.</h1>
+    <h1 class="fade-up" data-delay="150">Trois ans de <span class="shiny-text">formation.</span></h1>
   </section>
 
   <div class="bilan-stack">
@@ -112,12 +112,20 @@
 
     <div class="bilan-card liquid-glass fade-up" style="border-top: 2px solid var(--accent2);">
       <h2>| Bilan de 3ème année</h2>
-      <p class="bilan-sub-title">Personnel</p>
-      <p>Troisième et dernière année du B.U.T. SD. Année de consolidation et de spécialisation. Les projets S5 - NoSQL, outil décisionnel métier - m'ont mis face à des données réelles imparfaites, exactement ce qu'on rencontre en entreprise. Autonomie technique accrue.</p>
-      <p>En parallèle, j'ai conduit des projets personnels : systèmes RAG, pipelines MLOps avec MLflow et Docker, API FastAPI, exploration LLMs. Pas pour le CV - pour comprendre comment ça fonctionne vraiment en production.</p>
-      <p class="bilan-sub-title">Alternance MAIF</p>
-      <p>Approfondissement de la migration SAS vers Python. Résultats mesurés : -80% temps d'exécution des pipelines, -60% temps de passation entre équipes. Contexte assurantiel : qualité de données critique, contraintes réglementaires.</p>
-      <p>J'ai appris à lire du SAS sans documentation, reconstituer la logique métier par analyse entrée/sortie, puis réécrire en Python modulaire documenté et testé. Collaboration quotidienne avec des experts métier.</p>
+
+      <p class="bilan-sub-title">S5 — La donnée au service de la décision</p>
+      <p>Le semestre 5 a structuré mon regard autour d'une question centrale : comment transformer des données brutes en aide à la décision concrète ? Trois axes ont rythmé ce semestre.</p>
+      <p>Les <strong>Bases de données NoSQL</strong> m'ont confronté au paradigme document avec MongoDB. La SAÉ de migration SQL → NoSQL a imposé de dénormaliser des schémas relationnels complexes, de penser jointures comme documents imbriqués — un exercice d'abstraction que les cours ne préparent pas vraiment. Le <strong>Data Mining</strong> a complété ce tableau : classification supervisée et non supervisée, clustering k-means et hiérarchique, règles d'association. La SAÉ Data Mining a demandé de conduire un processus complet de bout en bout sur des données métier réelles.</p>
+      <p>Le projet phare du S5 reste la <strong>SAÉ VCOD — Outil décisionnel cabinet dentaire</strong>. Données incomplètes, formats hétérogènes, valeurs manquantes. Aucun jeu de données propre : exactement ce qu'on rencontre en entreprise. Dashboard JavaScript interactif avec KPIs de fréquentation, types d'actes et revenus. Ce chantier a autant été un travail de nettoyage et de qualification de données qu'un travail de développement. Les modules <em>Développement logiciel</em> et <em>Programmation web pour la visualisation</em> ont apporté les fondations techniques pour y répondre.</p>
+      <p>En parallèle, les ressources de valorisation professionnelle — <em>Communication des données, éthique et responsabilité</em>, <em>Anglais pour la coopération internationale</em>, <em>Domaines métiers de la data</em> — ont aiguisé ma capacité à présenter et défendre des résultats face à un public non technique.</p>
+
+      <p class="bilan-sub-title">S6 — Big Data et Intelligence Artificielle</p>
+      <p>Le semestre 6 est une montée en charge sur deux fronts : l'architecture des systèmes à grande échelle et les méthodes statistiques avancées pour l'IA.</p>
+      <p><strong>Big Data : enjeux, stockage et extraction</strong> — architectures distribuées, Hadoop, Spark, data lakes versus data warehouses, enjeux de gouvernance à l'échelle. <strong>Méthodes statistiques pour le Big Data</strong> — algorithmes adaptatifs au volume, traitement de données massives. Du côté EMS, l'<strong>Apprentissage statistique pour l'IA</strong> a abordé les réseaux de neurones, les modèles de deep learning et leur mise en œuvre pratique. La ressource <em>Approfondissement en Big Data</em> a apporté la dimension opérationnelle : streaming, traitement temps-réel, architectures modernes.</p>
+      <p>La SAÉ finale du S6 — <strong>Outil décisionnel : chatbot IA contextuel</strong> — résume l'ensemble du parcours. Un chatbot connecté à un LLM, avec un contexte personnalisé représentant mon parcours, capable de répondre à des questions précises sur ce que j'ai fait. Ce portfolio est lui-même la livraison de ce semestre.</p>
+
+      <p class="bilan-sub-title">Alternance MAIF — Approfondissement</p>
+      <p>En 3ème année, l'alternance à la MAIF est passée d'une phase d'apprentissage à une phase de production autonome. Résultats mesurés sur la migration SAS → Python : −80% de temps d'exécution des pipelines, −60% de temps de passation entre équipes. En contexte assurantiel, la qualité de données n'est pas négociable : chaque pipeline livré est documenté, testé, reproductible. J'ai appris à lire du SAS sans documentation, à reconstituer la logique métier par analyse systématique des entrées/sorties, et à collaborer quotidiennement avec des experts métier qui ne parlent pas le même langage technique.</p>
     </div>
 
   </div>
@@ -202,5 +210,6 @@
 <script src="js/particles.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/app.js"></script>
+<script src="js/effects.js"></script>
 </body>
 </html>

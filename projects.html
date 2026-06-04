@@ -87,7 +87,7 @@
 
   <section class="page-hero">
     <p class="eyebrow fade-up">// Projets</p>
-    <h1 class="fade-up" data-delay="150">Ce que j'ai construit.</h1>
+    <h1 class="fade-up" data-delay="150">Ce que j'ai <span class="shiny-text">construit.</span></h1>
   </section>
 
   <div class="filter-bar fade-up">
@@ -95,6 +95,7 @@
     <button class="filter-btn" data-filter="s1s2">S1-S2</button>
     <button class="filter-btn" data-filter="s3s4">S3-S4</button>
     <button class="filter-btn" data-filter="s5">S5</button>
+    <button class="filter-btn" data-filter="s6">S6</button>
   </div>
 
   <div class="project-grid fade-up">
@@ -199,6 +200,16 @@
       </div>
     </div>
 
+    <div class="proj-card" data-semester="s6" data-project="11">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-year">S6 · 2025–2026</div>
+      <div class="proj-title">SAÉ S6 - Outil décisionnel : Chatbot IA contextuel</div>
+      <div class="proj-desc">Chatbot conversationnel connecté à un LLM. Contexte personnalisé sur mon parcours : l'utilisateur pose des questions, l'IA répond précisément.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">LLM</span><span class="proj-tag">RAG</span><span class="proj-tag">JavaScript</span><span class="proj-tag">IA</span><span class="proj-tag">API</span>
+      </div>
+    </div>
+
   </div>
 
   <div class="project-modal" id="project-modal" role="dialog" aria-modal="true">
@@ -231,5 +242,6 @@
 <script src="js/particles.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/app.js"></script>
+<script src="js/effects.js"></script>
 </body>
 </html>
