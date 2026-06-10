@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const skillsSection = document.querySelector('.skills-section');
-  const logos         = document.querySelector('.skills-logos');
-
-  window.addEventListener('scroll', () => {
-    const rect = skillsSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.7) {
-      logos.classList.add('visible');
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  var burger    = document.getElementById('burger');
+  var navMobile = document.getElementById('nav-mobile');
+  var closeBtn  = document.getElementById('nav-mobile-close');
+  if (!burger || !navMobile) return;
+  burger.addEventListener('click', function () { navMobile.classList.add('open'); });
+  closeBtn.addEventListener('click', function () { navMobile.classList.remove('open'); });
+  navMobile.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { navMobile.classList.remove('open'); });
   });
 });

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours - Yvan NÉDÉLEC</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/>
+    <feComposite in2="SourceGraphic" operator="in" result="noise"/>
+    <feBlend in="SourceGraphic" in2="noise" mode="multiply"/>
+  </filter>
+</svg>
+<div class="guide-left"></div>
+<div class="guide-right"></div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-initials">YN</span>
+      <span class="nav-brand-text">
+        <span class="nav-brand-name">Yvan Nédélec</span>
+        <span class="nav-brand-role">Data · AI</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projects.html">Projets</a>
+      <a href="cours.html" class="active">Cours</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html">Alternance</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="burger" aria-label="Ouvrir le menu">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <rect y="0"    width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="5.25" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="10.5" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div id="nav-mobile">
+  <button id="nav-mobile-close" aria-label="Fermer">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="projects.html">Projets</a>
+  <a href="cours.html">Cours</a>
+  <a href="bilan.html">Bilan</a>
+  <a href="alternance.html">Alternance</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="macos-bar">
+  <div class="macos-bar-left">
+    <div class="traffic-lights">
+      <span class="traffic-light" style="background:#ff5f57"></span>
+      <span class="traffic-light" style="background:#febc2e"></span>
+      <span class="traffic-light" style="background:#28c840"></span>
+    </div>
+    <span class="macos-sep"></span>
+    <span class="macos-app-name">Cours - Yvan Nédélec</span>
+    <div class="macos-menu-items">
+      <a href="about.html">Profil</a>
+      <a href="projects.html">Projets</a>
+      <a href="cours.html" class="mac-active">Cours</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html">MAIF</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="macos-bar-right">Arval BNP Paribas · septembre</div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow fade-up">// Cours</p>
+    <h1 class="fade-up" data-delay="150">Ce que j'ai <span class="shiny-text">appris.</span></h1>
+  </section>
+
+  <p class="cours-intro fade-up">Programme du <strong>BUT Science des Données</strong>, parcours <strong>VCOD</strong>, suivi en alternance. Ressources, compétences et SAÉ travaillées semestre par semestre — les ressources réservées au parcours EMS ou aux étudiants en formation initiale ne sont pas listées ici.</p>
+
+  <div class="section">
+    <p class="eyebrow fade-up">1ère année — S1 / S2</p>
+    <div class="cours-semester-grid fade-up">
+
+      <div class="bilan-card liquid-glass">
+        <h2>Semestre 1</h2>
+        <p class="bilan-sub-title">Transversal</p>
+        <ul class="cours-list">
+          <li>Projet Personnel et Professionnel 1</li>
+          <li>Portfolio</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 1 — Traiter des données à des fins décisionnelles</p>
+        <ul class="cours-list">
+          <li>Bases de la programmation 1</li>
+          <li>Tableur et reporting</li>
+          <li>Bases de données relationnelles 1</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 2 — Analyser statistiquement les données</p>
+        <ul class="cours-list">
+          <li>Statistique descriptive 1</li>
+          <li>Probabilités 1</li>
+          <li>Mathématiques - analyse</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 3 — Valoriser une production dans un contexte professionnel</p>
+        <ul class="cours-list">
+          <li>Initiation à l'anglais de spécialité</li>
+          <li>Communication de l'information et recherche documentaire</li>
+          <li>Découverte des données de l'environnement entrepreneurial et économique</li>
+        </ul>
+        <p class="bilan-sub-title">SAÉ</p>
+        <ul class="cours-list">
+          <li>Reporting à partir de données stockées dans un SGBD relationnel</li>
+          <li>Écriture et lecture de fichiers de données</li>
+          <li>Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple</li>
+          <li>Apprendre en situation la production de données en entreprise</li>
+          <li>Présentation en anglais d'un territoire économique et culturel</li>
+          <li>Mise en œuvre d'une enquête</li>
+        </ul>
+      </div>
+
+      <div class="bilan-card liquid-glass">
+        <h2>Semestre 2</h2>
+        <p class="bilan-sub-title">Transversal</p>
+        <ul class="cours-list">
+          <li>Projet Personnel et Professionnel 2</li>
+          <li>Portfolio</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 1 — Traiter des données à des fins décisionnelles</p>
+        <ul class="cours-list">
+          <li>Bases de données relationnelles 2</li>
+          <li>Bases de la programmation 2</li>
+          <li>Programmation statistique</li>
+          <li>Reporting et datavisualisation</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 2 — Analyser statistiquement les données</p>
+        <ul class="cours-list">
+          <li>Statistique descriptive 2</li>
+          <li>Statistique inférentielle</li>
+          <li>Probabilités 2</li>
+          <li>Bases de l'algèbre</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 3 — Valoriser une production dans un contexte professionnel</p>
+        <ul class="cours-list">
+          <li>Approfondissement de l'anglais de spécialité</li>
+          <li>Communication et sémiologie</li>
+          <li>Étude des données de l'environnement entrepreneurial et économique</li>
+        </ul>
+        <p class="bilan-sub-title">SAÉ</p>
+        <ul class="cours-list">
+          <li>Conception et implémentation d'une base de données</li>
+          <li>Estimation par échantillonnage</li>
+          <li>Régression sur des données réelles</li>
+          <li>Datavisualisation</li>
+          <li>Construction et présentation d'indicateurs de performance</li>
+          <li>Analyse de données, reporting et datavisualisation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow fade-up">2ème année — S3 / S4</p>
+    <div class="cours-semester-grid fade-up">
+
+      <div class="bilan-card liquid-glass">
+        <h2>Semestre 3</h2>
+        <p class="bilan-sub-title">Compétence 1 — Traiter des données à des fins décisionnelles</p>
+        <ul class="cours-list">
+          <li>Utilisation avancée d'outils de reporting</li>
+          <li>Systèmes d'information décisionnels</li>
+          <li>Technologies web</li>
+          <li>Programmation statistique automatisée</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 2 — Analyser statistiquement les données</p>
+        <ul class="cours-list">
+          <li>Algèbre linéaire</li>
+          <li>Tests d'hypothèses pour l'analyse bi-variée</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 3 — Valoriser une production dans un contexte professionnel</p>
+        <ul class="cours-list">
+          <li>Anglais professionnel</li>
+          <li>Communication organisationnelle et professionnelle</li>
+          <li>Les données de l'environnement entrepreneurial et économique pour l'aide à la décision</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 4 — VCOD : développer un outil décisionnel</p>
+        <ul class="cours-list">
+          <li>Programmation objet</li>
+        </ul>
+        <p class="bilan-sub-title">SAÉ</p>
+        <ul class="cours-list">
+          <li>Collecte automatisée de données web</li>
+          <li>Intégration de données dans un Datawarehouse</li>
+          <li>Description et prévision de données temporelles</li>
+          <li>Conformité réglementaire pour traiter / analyser des données</li>
+        </ul>
+      </div>
+
+      <div class="bilan-card liquid-glass">
+        <h2>Semestre 4</h2>
+        <p class="bilan-sub-title">Compétence 1 — Traiter des données à des fins décisionnelles</p>
+        <ul class="cours-list">
+          <li>Automatisation et test en programmation</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 2 — Analyser statistiquement les données</p>
+        <ul class="cours-list">
+          <li>Méthodes factorielles</li>
+          <li>Classification automatique</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 3 — Valoriser une production dans un contexte professionnel</p>
+        <ul class="cours-list">
+          <li>Anglais scientifique et argumentation</li>
+          <li>Communication scientifique et argumentation</li>
+          <li>Exploration et valorisation de la donnée dans un cadre juridique et économique</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 4 — VCOD : développer un outil décisionnel</p>
+        <ul class="cours-list">
+          <li>Préparation / intégration de données</li>
+          <li>Programmation web</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow fade-up">3ème année — S5 / S6</p>
+    <div class="cours-semester-grid fade-up">
+
+      <div class="bilan-card liquid-glass">
+        <h2>Semestre 5</h2>
+        <p class="bilan-sub-title">Compétence 1 — Traiter des données à des fins décisionnelles</p>
+        <ul class="cours-list">
+          <li>Bases de données NoSQL</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 2 — Analyser statistiquement les données</p>
+        <ul class="cours-list">
+          <li>Data mining</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 3 — Valoriser une production dans un contexte professionnel</p>
+        <ul class="cours-list">
+          <li>Anglais pour la coopération internationale et enjeux internationaux des données</li>
+          <li>Communication des données, éthique et responsabilité</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 4 — VCOD : développer un outil décisionnel</p>
+        <ul class="cours-list">
+          <li>Développement logiciel</li>
+          <li>Programmation web pour la visualisation</li>
+        </ul>
+      </div>
+
+      <div class="bilan-card liquid-glass" style="border-top: 2px solid var(--accent2);">
+        <h2>Semestre 6</h2>
+        <p class="bilan-sub-title">Compétence 2 — Analyser statistiquement les données</p>
+        <ul class="cours-list">
+          <li>Méthodes statistiques pour le Big Data</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 3 — Valoriser une production dans un contexte professionnel</p>
+        <ul class="cours-list">
+          <li>Anglais pour la communication d'entreprise</li>
+          <li>Communication pour le management</li>
+        </ul>
+        <p class="bilan-sub-title">Compétence 4 — VCOD : développer un outil décisionnel</p>
+        <ul class="cours-list">
+          <li>Approfondissement en Big Data</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Yvan NÉDÉLEC <span class="footer-accent">©</span> 2026</span>
+    <div class="footer-links">
+      <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a>
+      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/particles.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/app.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>

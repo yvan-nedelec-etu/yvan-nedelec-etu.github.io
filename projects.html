@@ -1,132 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes projets</title>
+  <title>Projets - Yvan NÉDÉLEC</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item"><a href="index.html">Accueil</a></li>
-        <li class="nav-item"><a href="about.html">À propos</a></li>
-        <li class="nav-item"><a href="projects.html">Projets</a></li>
-        <li class="nav-item"><a href="bilan.html">Bilan</a></li>
-        <li class="nav-item"><a href="alternance.html">Mon alternance</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="projects">
-      <h1>&gt; 💻 Liste non exhaustive de projets universitaires</h1>
-      <div class="project-list">
-        <!-- Datavizualisation -->
-        <div class="project-bubble" data-project="1" data-title="Datavisualisation" data-image="assets/project1.jpg">
-          <img src="assets/project1.jpg" alt="Datavisualisation">
-          <div class="project-info">
-            <h3>Datavisualisation</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Séries chronologiques -->
-        <div class="project-bubble" data-project="2" data-title="Séries chronologiques" data-image="assets/project2.jpg">
-          <img src="assets/project2.jpg" alt="Séries chronologiques">
-          <div class="project-info">
-            <h3>Séries chronologiques</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Enquête sur les logements étudiants -->
-        <div class="project-bubble" data-project="3" data-title="Enquête sur les logements étudiants" data-image="assets/project3.jpg">
-          <img src="assets/project3.jpg" alt="Enquête sur les logements étudiants">
-          <div class="project-info">
-            <h3>Enquête sur les logements étudiants</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Site web PHP & JavaScript -->
-        <div class="project-bubble" data-project="4" data-title="Site web PHP &amp; JavaScript" data-image="assets/project4.jpg">
-          <img src="assets/project4.jpg" alt="Site web PHP &amp; JavaScript">
-          <div class="project-info">
-            <h3>Site web PHP &amp; JavaScript</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Collecte de données web -->
-        <div class="project-bubble" data-project="5" data-title="Collecte de données web" data-image="assets/project5.jpg">
-          <img src="assets/project5.jpg" alt="Collecte de données web">
-          <div class="project-info">
-            <h3>Collecte de données web</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Présentation d'un territoire économique et culturel -->
-        <div class="project-bubble" data-project="6" data-title="Présentation d'un territoire économique et culturel" data-image="assets/project6.jpg">
-          <img src="assets/project6.jpg" alt="Présentation d'un territoire économique et culturel">
-          <div class="project-info">
-            <h3>Présentation d'un territoire économique et culturel</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Projet 7 -->
-        <div class="project-bubble" data-project="7" data-title="Projet Application VBA" data-image="assets/project7.jpg">
-          <img src="assets/project7.jpg" alt="Projet Application VBA">
-          <div class="project-info">
-            <h3>Projet Application VBA</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-        <!-- Projet 8 -->
-        <div class="project-bubble" data-project="8" data-title="Conception et implémentation d'une base de données" data-image="assets/project8.jpg">
-          <img src="assets/project8.jpg" alt="Conception et implémentation d'une base de données">
-          <div class="project-info">
-            <h3>Conception et implémentation d'une base de données</h3>
-            <button class="detail-button"><b>Voir en détail</b></button>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Modal pour la vue détaillée du projet -->
-    <div class="project-modal" id="project-modal">
-      <div class="modal-content">
-        <span class="modal-close" id="modal-close">&times;</span>
-        <img src="" alt="Project Detail" id="modal-image">
-        <h2 id="modal-title">Titre du Projet</h2>
-        <div class="modal-tabs">
-          <button class="tab-button active" data-tab="attendus">Attendus</button>
-          <button class="tab-button" data-tab="difficultes">Difficultés</button>
-          <button class="tab-button" data-tab="competences">Compétences</button>
-        </div>
-        <div class="modal-tab-content">
-          <div class="tab-content active" id="attendus">
-            <p>Ici, présentez les attendus du projet...</p>
-          </div>
-          <div class="tab-content" id="difficultes">
-            <p>Ici, décrivez les difficultés rencontrées...</p>
-          </div>
-          <div class="tab-content" id="competences">
-            <p>Ici, listez les compétences développées...</p>
+<canvas id="bg"></canvas>
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/>
+    <feComposite in2="SourceGraphic" operator="in" result="noise"/>
+    <feBlend in="SourceGraphic" in2="noise" mode="multiply"/>
+  </filter>
+</svg>
+<div class="guide-left"></div>
+<div class="guide-right"></div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-initials">YN</span>
+      <span class="nav-brand-text">
+        <span class="nav-brand-name">Yvan Nédélec</span>
+        <span class="nav-brand-role">Data · AI</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projects.html" class="active">Projets</a>
+      <a href="cours.html">Cours</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html">Alternance</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="burger" aria-label="Ouvrir le menu">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <rect y="0"    width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="5.25" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="10.5" width="16" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div id="nav-mobile">
+  <button id="nav-mobile-close" aria-label="Fermer">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="projects.html">Projets</a>
+  <a href="cours.html">Cours</a>
+  <a href="bilan.html">Bilan</a>
+  <a href="alternance.html">Alternance</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="macos-bar">
+  <div class="macos-bar-left">
+    <div class="traffic-lights">
+      <span class="traffic-light" style="background:#ff5f57"></span>
+      <span class="traffic-light" style="background:#febc2e"></span>
+      <span class="traffic-light" style="background:#28c840"></span>
+    </div>
+    <span class="macos-sep"></span>
+    <span class="macos-app-name">Projets - Yvan Nédélec</span>
+    <div class="macos-menu-items">
+      <a href="about.html">Profil</a>
+      <a href="projects.html" class="mac-active">Projets</a>
+      <a href="cours.html">Cours</a>
+      <a href="bilan.html">Bilan</a>
+      <a href="alternance.html">MAIF</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="macos-bar-right">Arval BNP Paribas · septembre</div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow fade-up">// Projets</p>
+    <h1 class="fade-up" data-delay="150">Ce que j'ai <span class="shiny-text">construit.</span></h1>
+  </section>
+
+  <div class="filter-bar fade-up">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="s1s2">S1-S2</button>
+    <button class="filter-btn" data-filter="s3s4">S3-S4</button>
+    <button class="filter-btn" data-filter="s5">S5</button>
+    <button class="filter-btn" data-filter="s6">S6</button>
+  </div>
+
+  <div class="project-grid fade-up">
+
+    <div class="proj-card" data-semester="s1s2" data-project="1">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project1.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S1-S2 · 2023</div>
+          <div class="proj-title">Datavisualisation - Accidents de la vie courante</div>
+          <div class="proj-desc">Dashboard Power BI sur données Calyxis. Groupe de 5, méthode agile.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Power BI</span><span class="proj-tag">Agile</span><span class="proj-tag">Dataviz</span>
           </div>
         </div>
       </div>
     </div>
-  </main>
 
-  <footer>
-    <div class="footer-content">
-      <p>Yvan NEDELEC © 2025 | Mail : <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a></p>
-      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank">
-        <img src="assets/linkedin.png" alt="LinkedIn" class="footer-linkedin">
-      </a>
+    <div class="proj-card" data-semester="s1s2" data-project="2">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project2.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S1-S2 · 2023</div>
+          <div class="proj-title">Séries chronologiques - Exportations Russie</div>
+          <div class="proj-desc">Modélisation et prévision individuelle. Gestion de la saisonnalité.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Excel</span><span class="proj-tag">Stats</span><span class="proj-tag">Prévision</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
 
-  <script src="js/menu.js"></script>
-  <script src="js/projets.js"></script>
+    <div class="proj-card" data-semester="s1s2" data-project="3">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project3.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S1-S2 · 2023</div>
+          <div class="proj-title">Enquête - Logements étudiants</div>
+          <div class="proj-desc">Rapport d'analyse sur les conditions de logement. Données primaires.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Enquête</span><span class="proj-tag">Analyse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s1s2" data-project="4">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project6.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S1-S2 · 2023</div>
+          <div class="proj-title">Présentation - Tokyo, territoire économique et culturel</div>
+          <div class="proj-desc">Présentation orale 20 min en anglais et français. Premier projet universitaire.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Communication</span><span class="proj-tag">Anglais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s3s4" data-project="5">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project7.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S3-S4 · 2024</div>
+          <div class="proj-title">Application VBA - Dashboard football</div>
+          <div class="proj-desc">Tableau de bord Excel interactif sur les 1000 joueurs les plus performants.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">VBA</span><span class="proj-tag">Excel</span><span class="proj-tag">Dataviz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s3s4" data-project="6">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project8.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S3-S4 · 2024</div>
+          <div class="proj-title">Base de données Python + Tkinter + PhpMyAdmin</div>
+          <div class="proj-desc">Conception BDD relationnelle, alimentation via Python Tkinter, affichage.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span><span class="proj-tag">Tkinter</span><span class="proj-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s3s4" data-project="7">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project4.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S3-S4 · 2024</div>
+          <div class="proj-title">Site web PHP &amp; JS - 1000 titres Spotify</div>
+          <div class="proj-desc">Application full-stack avec visualisation interactive. Open data, groupe de 2.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">PHP</span><span class="proj-tag">JavaScript</span><span class="proj-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s3s4" data-project="8">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-body">
+        <img src="assets/project5.jpg" alt="" class="proj-thumb">
+        <div class="proj-info">
+          <div class="proj-year">S3-S4 · 2024</div>
+          <div class="proj-title">Collecte de données web - Scraping &amp; API</div>
+          <div class="proj-desc">Script Python scraping + API, interface web de restitution. Alternants uniquement.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span><span class="proj-tag">Scraping</span><span class="proj-tag">API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s5" data-project="9">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-year">S5 · 2025</div>
+      <div class="proj-title">SAÉ VCOD - Outil décisionnel cabinet dentaire</div>
+      <div class="proj-desc">Dashboard JavaScript sur données métier imparfaites. KPIs fréquentation, actes, revenus.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">JavaScript</span><span class="proj-tag">Décisionnel</span><span class="proj-tag">Dashboard</span>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s5" data-project="10">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-year">S5 · 2025</div>
+      <div class="proj-title">SAÉ NoSQL - Migration SQL vers MongoDB + Streamlit</div>
+      <div class="proj-desc">Script Python de migration relationnelle vers document JSON. Dashboard Streamlit.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span><span class="proj-tag">MongoDB</span><span class="proj-tag">Streamlit</span><span class="proj-tag">NoSQL</span>
+      </div>
+    </div>
+
+    <div class="proj-card" data-semester="s6" data-project="11">
+      <span class="proj-arrow">↗</span>
+      <div class="proj-year">S6 · 2025–2026</div>
+      <div class="proj-title">SAÉ S6 - Outil décisionnel : Chatbot IA contextuel</div>
+      <div class="proj-desc">Chatbot conversationnel connecté à un LLM. Contexte personnalisé sur mon parcours : l'utilisateur pose des questions, l'IA répond précisément.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">LLM</span><span class="proj-tag">RAG</span><span class="proj-tag">JavaScript</span><span class="proj-tag">IA</span><span class="proj-tag">API</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="project-modal" id="project-modal" role="dialog" aria-modal="true">
+    <div class="modal-content liquid-glass">
+      <button class="modal-close" id="modal-close" aria-label="Fermer">×</button>
+      <h2 id="modal-title">Titre du projet</h2>
+      <div class="modal-tabs">
+        <button class="tab-button active" data-tab="attendus">Attendus</button>
+        <button class="tab-button" data-tab="difficultes">Difficultés</button>
+        <button class="tab-button" data-tab="competences">Compétences</button>
+      </div>
+      <div class="tab-content active" id="attendus"></div>
+      <div class="tab-content" id="difficultes"></div>
+      <div class="tab-content" id="competences"></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Yvan NÉDÉLEC <span class="footer-accent">©</span> 2026</span>
+    <div class="footer-links">
+      <a href="mailto:yvan.nedelec@etu.univ-poitiers.fr">yvan.nedelec@etu.univ-poitiers.fr</a>
+      <a href="https://fr.linkedin.com/in/yvan-nedelec-40b779214" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/particles.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/app.js"></script>
+<script src="js/effects.js"></script>
 </body>
 </html>
