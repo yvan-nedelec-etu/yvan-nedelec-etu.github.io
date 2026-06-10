@@ -131,21 +131,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (modal) {
+    function openProjectModal(card) {
+      var id   = card.dataset.project;
+      var data = projectData[id];
+      if (!data) return;
+      modalTitle.textContent = card.querySelector('.proj-title').textContent;
+      document.getElementById('attendus').innerHTML    = '<p>' + data.attendus    + '</p>';
+      document.getElementById('difficultes').innerHTML = '<p>' + data.difficultes + '</p>';
+      document.getElementById('competences').innerHTML = '<p>' + data.competences + '</p>';
+      tabBtns.forEach(function (b) { b.classList.remove('active'); });
+      tabConts.forEach(function (c) { c.classList.remove('active'); });
+      tabBtns[0].classList.add('active');
+      tabConts[0].classList.add('active');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
     projCards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        var id   = card.dataset.project;
-        var data = projectData[id];
-        if (!data) return;
-        modalTitle.textContent = card.querySelector('.proj-title').textContent;
-        document.getElementById('attendus').innerHTML    = '<p>' + data.attendus    + '</p>';
-        document.getElementById('difficultes').innerHTML = '<p>' + data.difficultes + '</p>';
-        document.getElementById('competences').innerHTML = '<p>' + data.competences + '</p>';
-        tabBtns.forEach(function (b) { b.classList.remove('active'); });
-        tabConts.forEach(function (c) { c.classList.remove('active'); });
-        tabBtns[0].classList.add('active');
-        tabConts[0].classList.add('active');
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
+      var title = card.querySelector('.proj-title').textContent;
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', 'Voir les détails du projet : ' + title);
+      card.addEventListener('click', function () { openProjectModal(card); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openProjectModal(card);
+        }
       });
     });
     modalClose.addEventListener('click', closeModal);

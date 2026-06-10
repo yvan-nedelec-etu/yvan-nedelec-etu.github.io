@@ -7,6 +7,7 @@
   'use strict';
 
   var DESKTOP = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function lerp(a, b, t) { return a + (b - a) * t; }
   function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
@@ -23,7 +24,7 @@
   /* ═══════════════════════════════════════════════════
      1. CURSEUR CUSTOM  +  SPOTLIGHT
   ═══════════════════════════════════════════════════ */
-  if (DESKTOP) {
+  if (DESKTOP && !REDUCED_MOTION) {
     var dot   = document.createElement('div');
     var ring  = document.createElement('div');
     dot.className  = 'cur-dot';
@@ -71,7 +72,7 @@
   /* ═══════════════════════════════════════════════════
      3. MOUSE AURA (fond doux)
   ═══════════════════════════════════════════════════ */
-  if (DESKTOP) {
+  if (DESKTOP && !REDUCED_MOTION) {
     var aura = document.createElement('div');
     aura.className = 'mouse-aura';
     document.body.prepend(aura);
@@ -94,7 +95,7 @@
      4. 3D TILT HERO — la section entière pivote en 3D
   ═══════════════════════════════════════════════════ */
   var heroEl = document.querySelector('.hero-section');
-  if (heroEl && DESKTOP) {
+  if (heroEl && DESKTOP && !REDUCED_MOTION) {
     var htRX = 0, htRY = 0, htTX = 0, htTY = 0;
 
     document.addEventListener('mousemove', function (e) {
@@ -121,7 +122,7 @@
   /* ═══════════════════════════════════════════════════
      5. PARALLAXE SCROLL — le hero se dissolve en scrollant
   ═══════════════════════════════════════════════════ */
-  if (heroEl) {
+  if (heroEl && !REDUCED_MOTION) {
     var heroTitle  = heroEl.querySelector('.hero-title');
     var heroBadge  = heroEl.querySelector('.hero-badge');
     var heroMeta   = heroEl.querySelector('.hero-meta');
@@ -150,7 +151,7 @@
   /* ═══════════════════════════════════════════════════
      6. PARALLAXE PROFONDEUR sur les ORBES (souris)
   ═══════════════════════════════════════════════════ */
-  if (DESKTOP) {
+  if (DESKTOP && !REDUCED_MOTION) {
     var orbs = Array.from(document.querySelectorAll('.orb'));
     if (orbs.length) {
       var oTx = Array(orbs.length).fill(0), oTy = Array(orbs.length).fill(0);
@@ -194,10 +195,11 @@
     if (!badge && !htInners.length) return;
 
     /* État initial pour les éléments non animés par CSS */
-    htInners.forEach(function (el) { el.style.transform = 'translateY(110%)'; });
+    htInners.forEach(function (el) { el.style.transform = REDUCED_MOTION ? 'translateY(0)' : 'translateY(110%)'; });
 
     function appear(el, delay) {
       if (!el) return;
+      if (REDUCED_MOTION) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; return; }
       el.style.opacity = '0'; el.style.transform = 'translateY(14px)';
       setTimeout(function () {
         el.style.transition = 'opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1)';
@@ -208,6 +210,7 @@
 
     function slideUp(el, delay) {
       if (!el) return;
+      if (REDUCED_MOTION) { el.style.transform = 'translateY(0)'; return; }
       setTimeout(function () {
         el.style.transition = 'transform 1.15s cubic-bezier(.16,1,.3,1)';
         el.style.transform  = 'translateY(0)';
@@ -266,7 +269,7 @@
   /* ═══════════════════════════════════════════════════
      8. 3D TILT CARTES (avec glare)
   ═══════════════════════════════════════════════════ */
-  if (DESKTOP) {
+  if (DESKTOP && !REDUCED_MOTION) {
     function initTilt(sel, deg, glare) {
       document.querySelectorAll(sel).forEach(function (el) {
         var g = null;
@@ -307,7 +310,7 @@
   /* ═══════════════════════════════════════════════════
      9. BOUTONS MAGNÉTIQUES
   ═══════════════════════════════════════════════════ */
-  if (DESKTOP) {
+  if (DESKTOP && !REDUCED_MOTION) {
     document.querySelectorAll('.btn-primary,.btn-secondary,.btn-glass,.bento-arrow-btn').forEach(function (btn) {
       btn.addEventListener('mousemove', function (e) {
         var r  = btn.getBoundingClientRect();
@@ -374,7 +377,7 @@
   /* ═══════════════════════════════════════════════════
      12. NAV PILL (highlight glissant)
   ═══════════════════════════════════════════════════ */
-  if (DESKTOP) {
+  if (DESKTOP && !REDUCED_MOTION) {
     var navLinks = document.querySelectorAll('.nav-links a');
     var navWrap  = document.querySelector('.nav-links');
     if (navWrap) {
