@@ -299,7 +299,7 @@
         });
       });
     }
-    initTilt('.bento-card',   12, true);
+    initTilt('.bento-card:not(.bento-bio)', 12, true);
     initTilt('.passion-card',  9, true);
     initTilt('.learn-card',    9, false);
     initTilt('.profile-card',  9, false);
